@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\Developer\\SoftwareDevelopment\\bt\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-si\\values-si.xml",
+            "outputFile": "/Users/9Brainz/StudioProjects/expense_tracker/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-si/values-si.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\7d77d4ebbaf550305d01ed54778f79fb\\core-1.6.0\\res\\values-si\\values-si.xml",
+                    "source": "/Users/9Brainz/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/res/values-si/values-si.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

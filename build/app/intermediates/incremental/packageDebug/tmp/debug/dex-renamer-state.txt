@@ -1,4 +1,4 @@
-#Thu Jul 07 17:54:42 IST 2022
-base.0=G\:\\Developer\\SoftwareDevelopment\\bt\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Fri Jul 08 11:43:57 IST 2022
+base.0=/Users/9Brainz/StudioProjects/expense_tracker/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

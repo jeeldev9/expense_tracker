@@ -1,4 +1,4 @@
-com.example.budget_tracker_ui
+com.example.expense_tracker
 attr activityAction
 attr activityName
 attr alpha

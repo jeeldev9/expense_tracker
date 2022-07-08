@@ -1,4 +1,5 @@
 import 'package:budget_tracker_ui/constant.dart';
+import 'package:budget_tracker_ui/controller/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -21,6 +22,7 @@ class LoginScreenOne extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: white,
@@ -157,49 +159,80 @@ class LoginScreenOne extends StatelessWidget {
                 // login button and social login
                 Column(
                   children: [
-                    InkWell(
-                      onTap: () async {
-                        if (emailTextController.text.isEmpty) {
-                          Fluttertoast.showToast(msg: "Enter Email");
-                        } else if (passwordController.text.isEmpty) {
-                          Fluttertoast.showToast(msg: "Enter Password");
-                        } else {
-                          bool result = await loginController.login(
-                              emailTextController.text,
-                              passwordController.text);
-                          if (result) {
-                            Navigator.pushNamedAndRemoveUntil(
-                                context, "/rootApp", (route) => false);
-                          }
-                        }
-                      },
-                      child: Container(
-                        height: 50,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                            gradient:
-                                LinearGradient(colors: [secondary, primary]),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.arrow_forward_sharp,
-                              color: white,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              "Login",
-                              style: TextStyle(
-                                  fontSize: 16,
+                    GetBuilder<LoginController>(
+                id: 'loginButton',
+                        init: LoginController(),
+                      builder: (value) {
+                        return value.isApiCalling? Container(
+                          height: 50,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade400,
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.arrow_forward_sharp,
+                                color: white,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "Login",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: white,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ): InkWell(
+                          onTap: () async {
+                            if (emailTextController.text.isEmpty) {
+                              Fluttertoast.showToast(msg: "Enter Email");
+                            } else if (passwordController.text.isEmpty) {
+                              Fluttertoast.showToast(msg: "Enter Password");
+                            } else {
+                              bool result = await loginController.login(
+                                  emailTextController.text,
+                                  passwordController.text);
+                              if (result) {
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, "/rootApp", (route) => false);
+                              }
+                            }
+                          },
+                          child: Container(
+                            height: 50,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                gradient:
+                                    LinearGradient(colors: [secondary, primary]),
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.arrow_forward_sharp,
                                   color: white,
-                                  fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
-                      ),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  "Login",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: white,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ),
+                        );
+                      }
                     ),
                     SizedBox(
                       height: 20,

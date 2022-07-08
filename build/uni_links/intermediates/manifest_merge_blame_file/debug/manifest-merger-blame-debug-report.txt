@@ -2,7 +2,10 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="name.avioli.unilinks" >
 4
-5    <uses-sdk android:minSdkVersion="16" />
-5-->C:\flutter\.pub-cache\hosted\pub.dartlang.org\uni_links-0.5.1\android\src\main\AndroidManifest.xml
-6
-7</manifest>
+5    <uses-sdk
+6        android:minSdkVersion="16"
+6-->/Users/9Brainz/flutter/.pub-cache/hosted/pub.dartlang.org/uni_links-0.5.1/android/src/main/AndroidManifest.xml
+7        android:targetSdkVersion="16" />
+7-->/Users/9Brainz/flutter/.pub-cache/hosted/pub.dartlang.org/uni_links-0.5.1/android/src/main/AndroidManifest.xml
+8
+9</manifest>

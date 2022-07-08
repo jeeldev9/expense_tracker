@@ -16,17 +16,14 @@ void main() async {
   );
 
   supabase = Supabase.instance.client;
+  //Check user already login or not
+  loginController.loginVerify();
 
-  if (supabase.auth.user() != null) {
-    user = supabase.auth.user();
-  }
 
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/login',
+    initialRoute: loginController.isUserLogin ?'/rootApp'  : '/login',
     routes: {
-      '/': (context) =>
-          supabase.auth.currentUser != null ? RootApp() : LoginScreenOne(),
       '/rootApp': (context) => RootApp(),
       '/register': (context) => RegisterScreen(),
       '/login': (context) => LoginScreenOne(),

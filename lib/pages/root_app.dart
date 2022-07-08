@@ -1,3 +1,4 @@
+import 'package:budget_tracker_ui/constant.dart';
 import 'package:budget_tracker_ui/pages/budget_page.dart';
 import 'package:budget_tracker_ui/pages/create_budge_page.dart';
 import 'package:budget_tracker_ui/pages/daily_page.dart';
@@ -42,6 +43,7 @@ class _RootAppState extends State<RootApp> {
         floatingActionButton: FloatingActionButton(
             onPressed: () {
               selectedTab(4);
+
             },
             child: Icon(
               Icons.add,
